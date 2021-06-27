@@ -4,7 +4,7 @@ namespace FlourishFitness.Pages
     {
         public bool AuthenticateUser()
         {
-            throw new System.NotImplementedException();
+            return true;
         }
 
         public void CreateUser()
@@ -19,6 +19,9 @@ namespace FlourishFitness.Pages
 
         public User GetUser(string username, string password)
         {
+            if (AuthenticateUser()) {
+                return new User{ Id=1, Username=username, Password=password, Email="example@fake.com" }
+            }
             throw new System.NotImplementedException();
         }
 
